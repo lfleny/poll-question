@@ -20,7 +20,7 @@ spring.datasource.password=pollPassword
     "status": 1
   }
 ### - Удаление опроса
-  DEL /polls/{pollId}
+####  DEL /polls/{pollId}
   
   - pollId - id удаляемого опроса
   
