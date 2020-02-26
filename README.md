@@ -2,6 +2,8 @@
 
 Настройки доступа к базе данных:
 
+/src/main/resources/application.properties 
+
 spring.datasource.url=jdbc:postgresql://localhost:5432/poll
 spring.datasource.username=polluser
 spring.datasource.password=pollPassword
