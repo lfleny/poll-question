@@ -24,9 +24,6 @@ public class QuestionController {
 
     @PostMapping(value = "/questions")
     public Question createQuestion(@RequestBody @Valid Question question) {
-        System.out.println(question.getOrder());
-        System.out.println(question.getText());
-        System.out.println(question.getPollId());
         return questionRepository.save(question);
     }
 }

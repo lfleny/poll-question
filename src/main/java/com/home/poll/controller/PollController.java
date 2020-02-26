@@ -100,9 +100,4 @@ public class PollController {
                     return ResponseEntity.ok().build();
                 }).orElseThrow(() -> new ResourceNotFoundException("Poll not found with id " + pollsId));
     }
-
-//    @ExceptionHandler(java.lang.NumberFormatException.class)
-//    public String conflict() {
-//        throw new WrongRequestParametersException("Wrong sort parameters");
-//    }
 }
