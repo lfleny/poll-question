@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - changeSet:
+      id: 1
+      author: pollUser
+      changes:
+        - createTable:
+            tableName: polls
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(1000)
+              - column:
+                  name: start_date
+                  type: timestamp
+              - column:
+                  name: end_date
+                  type: timestamp
+              - column:
+                  name: status
+                  type: int
+  - changeSet:
+      id: 2
+      author: pollUser
+      changes:
+          - createTable:
+              tableName: questions
+              columns:
+                - column:
+                    name: id
+                    type: BIGINT
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: poll_id
+                    type: BIGINT
+                - column:
+                    name: text
+                    type: varchar(10000)
+                - column:
+                    name: question_order
+                    type: int
