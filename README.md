@@ -1,4 +1,4 @@
-REST-сервис для управления опросами
+# REST-сервис для управления опросами
 
 Настройки доступа к базе данных:
 
@@ -8,25 +8,25 @@ spring.datasource.password=pollPassword
 
 Формат даты - timestamp
 
-Список запросов:
-- Добавление нового опроса 
-  POST /polls
+## Список запросов:
+### - Добавление нового опроса 
+####  POST /polls
   {
     "name": "Новый опрос",
     "startDate": 533456,
     "endDate": 1033456,
     "status": 1
   }
-  - Удаление опроса
+### - Удаление опроса
   DEL /polls/{pollId}
   
-  pollId - id удаляемого опроса
+  - pollId - id удаляемого опроса
   
-  - Редактирование опроса
+### - Редактирование опроса
   
-  PUT /polls/{pollId}
+####  PUT /polls/{pollId}
   
-  pollId - id опроса
+  - pollId - id опроса
   
   {
     "name": "Новое наименование запроса",
@@ -35,24 +35,24 @@ spring.datasource.password=pollPassword
     "status": 2
   }
   
-  - Получить список опросов
+### - Получить список опросов
   
-  GET /polls?orderBy={orderBy}&direction={direction}&name={name}&status={status}&fromStartDate={fromStartDate}&toStartDate={toStartDate}&fromEndDate={fromEndDate}&toEndDate={toEndDate}
+####  GET /polls?orderBy={orderBy}&direction={direction}&name={name}&status={status}&fromStartDate={fromStartDate}&toStartDate={toStartDate}&fromEndDate={fromEndDate}&toEndDate={toEndDate}
   
   Обязательные поля:
-  orderBy - сортировка по полю startDate/name
-  direction - ASC/DESC порядок сортировки
+  - orderBy - сортировка по полю startDate/name
+  - direction - ASC/DESC порядок сортировки
   
   Опциональные поля для фильтрации:
-  name - наименование опроса
-  status - статус опроса
-  fromStartDate - диапазон даты начала опроса начиная с даты ...
-  toStartDate - диапазон даты начала опроса заканчивая датой ...
-  fromEndDate - диапазон даты окончания опроса начиная с даты ...
-  toEndDate - диапазон даты окончания опроса заканчивая датой ...
+  - name - наименование опроса
+  - status - статус опроса
+  - fromStartDate - диапазон даты начала опроса начиная с даты ...
+  - toStartDate - диапазон даты начала опроса заканчивая датой ...
+  - fromEndDate - диапазон даты окончания опроса начиная с даты ...
+  - toEndDate - диапазон даты окончания опроса заканчивая датой ...
   
-  - Добавить новый вопрос опроса:
-  POST /questions
+###  - Добавить новый вопрос опроса:
+####  POST /questions
   
   {
     "pollId": 1,
@@ -60,7 +60,6 @@ spring.datasource.password=pollPassword
     "order": 2
   }
   
-  pollId - id опроса
-  text - текст вопроса
-  order - порядок отображения
-  
+  - pollId - id опроса
+  - text - текст вопроса
+  - order - порядок отображения
